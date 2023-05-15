@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <ContextProvider> 
-          <Navbar/> 
+          <Navbar /> 
           {children}
         </ContextProvider>
       </body>

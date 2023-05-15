@@ -2,10 +2,12 @@
 import { Inter } from 'next/font/google'
 import { useContext } from 'react'
 import { UserContext } from '@/context/ContextProvider'
+import Navbar from '@/components/Navbar'
 export default function Home() {
   const {user}=useContext(UserContext)
   return (
     <main className="">
+      
       <div className='mx-auto text-center mt-10'>
         <h2 className='text-4xl text-blue-700 font-bold'>User details</h2>
       </div>

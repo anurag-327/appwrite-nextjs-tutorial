@@ -6,6 +6,7 @@ import Loader from "./Loader";
 import { UserContext } from "@/context/ContextProvider";
 const SignIn = ({setLogin}) => 
 {
+  const {user,setUser}=useContext(UserContext)
   const router=useRouter()
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
@@ -18,6 +19,8 @@ const SignIn = ({setLogin}) =>
     try{
       const res=await account.createEmailSession(email,password);
       console.log(res);
+      const res2=await account.get();
+      setUser({email:res2.email,id:res2.$id})
       setLoading(false)
       e.target.reset();
       router.push("/")
